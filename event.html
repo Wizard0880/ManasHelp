@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,8 @@
             margin-bottom: 8px;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
@@ -41,11 +43,12 @@
         }
     </style>
 </head>
+
 <body>
 
-    <form>
+    <form onsubmit="submitForm(event)">
         <h2>Event Registration</h2>
-        
+
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -60,9 +63,18 @@
             <!-- Add more event types as needed -->
         </select>
 
-        <button type="submit" onclick="submitForm()">Register</button>
+        <button type="submit">Register</button>
     </form>
-    <script src="Script.js"></script>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            // Add your form submission logic here
+            alert('Form submitted!');
+            // You can also use AJAX or other techniques for form submission
+        }
+    </script>
 
 </body>
+
 </html>
