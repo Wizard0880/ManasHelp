@@ -1,4 +1,4 @@
-function submitForm() {
+function submitForm(event) {
     event.preventDefault();
 
     // Get form data
@@ -14,7 +14,7 @@ function submitForm() {
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     // Set up response handler
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 alert('Registration successful!');
@@ -32,6 +32,5 @@ function submitForm() {
         name: name,
         email: email,
         event_type: event_type,
-        
     }));
 }
